@@ -1,0 +1,52 @@
+class Usuario {
+
+    constructor(nombre , apellido){
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.libros = [];
+        this.mascotas = [];
+    }>
+
+    getFullName(){
+        return (`${this.nombre} ${this.apellido}`);
+    }
+
+    addMascota(mascota){
+        this.mascotas.push(mascota);
+    }
+    
+    countMascotas(){
+        return this.mascotas.length;
+    }
+
+    addBook(nombre, autor){
+        let libro = {nombre, autor}
+        this.libros.push(libro);
+        
+    }
+    
+    getBooks(){
+    let nombres = [];    
+    for(let libro of this.libros){
+       nombres.push(libro.nombre);
+    }
+    
+    return nombres;
+    }
+
+}
+
+const Elon = new Usuario("Elon" , "Musk");
+
+
+
+Elon.addMascota("viggo"); //agrego mascota
+Elon.addMascota("nala")
+
+
+Elon.addBook("El señor de las moscas" , "William Golding"); //agrego libro con autor
+Elon.addBook("Fundacion" , "Isaac Asimov"); //agrego libro con autor
+
+console.log(Elon.countMascotas());
+console.log(Elon.getBooks());
+console.log(Elon.getFullName());
