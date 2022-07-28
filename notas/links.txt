@@ -1,0 +1,10 @@
+npm init ==> inicia un proyecto de Node
+npm i ==> Instala las dependencias del proyecto escritas en el package.json
+npm install = npm i
+
+handlebars: https://handlebarsjs.com/guide/#what-is-handlebars 
+            https://www.npmjs.com/package/servor
+
+
+
+express functions doc: sethttp://expressjs.com/en/4x/api.html#app.set
