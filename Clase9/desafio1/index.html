@@ -1,10 +1,53 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+<html>
+    <head></head>
+    <body>
+
+        <div id="root"></div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js" integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script>
+            // Primero se invoca/importa handlebars con el link de arriba, de esta manera estamos incorporando todas las funcionalidades
+            // Logica del ejercicio
+            // Primero se escribe el templateString, esta es la parte a renderizar de html
+            /*Los template strings(en este cado handlebars), tienen sintaxis propia y diferentes formas de manejar las variables y la logica
+            como se puede ver en los comentarios que utiliza un if y luego una especia de foreach para mostrar todos los elementos de la lista*/
+            const templateString = `
+                <h1> Datos Personales </h1>
+                <ul>
+                    <li>Nombre: {{nombre}} </li>
+                    <li>Apellido: {{apellido}} </li>
+                    <li>Edad: {{edad}} </li>
+                    <li>Telefono: {{telefono}} </li>
+                    <li>Email: {{email}} </li>
+                </ul>
+               
+                {{#if comments}} 
+                <h2> Comentarios </h2>
+                    <ul>
+                        {{#each comments}}
+                            <li> {{this.user}}: {{this.text}} </li>
+                        {{/each}}
+                    </ul>
+                {{/if}}
+                
+                
+            `;
+            const template = Handlebars.compile(templateString);
+            //Luego se declaran y se le asignan valores a las variables indicadas en la anterior parte. 
+            //de esta menra se ve como se comunica la logica con el templateString, para luego renderizar todo
+            const user = {
+                nombre: "Antonio",
+                apellido: "Aguilar",
+                edad: 30,
+                telefono: "+504 XXXXXXX",
+                email: "jaguilar992@gmail.com",
+                comments: [
+                    {text: "Qué super se ve tu sitio", user: "jlopez"},
+                    {text: "Hola", user: "smorgan"}
+                ]
+            }
+            const html = template(user);
+            document.querySelector("#root").innerHTML = html;
+        </script>
+    </body>
 </html>

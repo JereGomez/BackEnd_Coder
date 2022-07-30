@@ -1,0 +1,26 @@
+{
+  "name": "apunts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "run dev ",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JereGomez/BackEnd_Coder.git"
+  },
+  "author": "jeremias",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JereGomez/BackEnd_Coder/issues"
+  },
+  "homepage": "https://github.com/JereGomez/BackEnd_Coder#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
