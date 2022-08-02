@@ -11,6 +11,7 @@ const hbs = handlebars.create({
     layoutsDir:__dirname+"/views/layout",
     partialsDir:__dirname+"/views/partials/"
 });
+
 app.engine("hbs", hbs.engine);
 app.set('views' , './views');
 app.set('view engine' , 'hbs');
@@ -36,9 +37,10 @@ app.get('/saludo' , (req , res)=>{//ruta personalizada
         saludo: 'Holaaaa',
         cuerpo: 'saludando desde el mas alla'
     };
-    res.render('main' ,{ //renderiza main.hbs y dentro se pregunta si este o
-         saludo:true,//dentro de esta ruta el objero existe por lo que se muestra
-         ...saludo //descomprimo objeto
+
+    res.render('main' ,{ //renderiza main.hbs y dentro se pregunta si saludo existe
+         saludo:true,//dentro de esta ruta saludo existe por lo que se muestra
+         ...saludo //descomprimo objeto a mostrar
     });
 });
 

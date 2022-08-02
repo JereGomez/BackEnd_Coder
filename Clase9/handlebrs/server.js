@@ -1,18 +1,19 @@
 const express=require("express");
 const handlebars=require("express-handlebars");
 const app=express();
-const hbs=handlebars.create({
-    extname:".hbs",
+
+const hbs=handlebars.create({//objeto para definir opciones de configuracion
+    extname:".hbs", //nombre de extencion
     defaultLayout:"index.hbs",
-    layoutsDir:__dirname+"/views/layout",
-    partialsDir:__dirname+"/views/partials/"
+    layoutsDir:__dirname+"/views/layout", //direccion de layouts
+    partialsDir:__dirname+"/views/partials/" //direcciones parciales
 });
 
 app.use(express.static("public"));
 
-app.engine("hbs",hbs.engine);
-app.set("view engine","hbs");
-app.set("views","./views");
+app.engine("hbs", hbs.engine);// declaramos el moton a utilizar, y pasamos la funcion engine del objeto handlebars creado anteriormemnte. Aqui se renderiza el codigo
+app.set("view engine", "hbs");
+app.set("views", "./views");
 
 fakeApi=()=>[
 
