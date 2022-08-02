@@ -1,0 +1,22 @@
+head
+    title='Productos'
+body 
+    table 
+        thead(style="text-align:center")
+            th='Nombre'
+            th='Precio'
+            th='Img'
+        tbody 
+            each prod in productos
+                tr(style="text-align:center")
+                    td= prod.title 
+                    td= prod.price 
+                    td 
+                        img(src=prod.thumbnail style="height:50px;width:50px") 
+       
+            else
+                p='No se encontraron productos'
+
+    br
+    form(action="/productos" method="POST")
+        button(type="submit")= 'Formulario'
