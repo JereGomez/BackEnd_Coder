@@ -1,0 +1,11 @@
+  {{#if mensajes}}
+          {{#each mensajes }}
+        <div class= "six wide post ui card" style="width:max-content">
+            <div class= "div ui container">
+            <b style="color:blue">{{this.email}}</b> [<t style="color:brown">{{this.fh}}</t>]: <i style="color:green">{{this.mensaje}}</i>
+            </div>
+        </div>
+        {{/each}}
+  {{/if}}
+
+
