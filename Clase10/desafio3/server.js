@@ -13,7 +13,7 @@ app.get('/' , (req,res)=>{
 
 app.post('/personas', (req,res)=>{
     const {nombre, apellido, edad} = req.body;
-    if(nombre, apellido, edad){
+    if(nombre, apellido, edad){//verificamos que todos los campos sea hayan cargado
         personas.push({nombre, apellido, edad});
     };
     res.redirect('/'); //nos redirrecciona a la ruta principal para mostrar la lista de las perosnas
