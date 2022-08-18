@@ -1,0 +1,47 @@
+ {{#if admin}} 
+    <div class="ui  cards">
+          {{#each productos }}
+            <div class="ui card">
+              <div class="image">
+                <img src={{this.thumbnail}}>
+              </div>
+              <div class="content">
+                <a class="header">{{this.title}}</a>
+                <div class="meta">
+                  <a>{{this.price}}</a>
+                </div>
+              </div>
+              
+              <div class="extra content">
+                <div class="ui two buttons">
+                    <div class="ui basic blue button" onclick="editarProd({{this.id}})">Actualizar</div>
+                    <div class="ui basic red button" onclick="eliminarProd({{this.id}})">Eliminar</div>
+                </div>
+              </div>
+              
+            </div>
+          {{/each}}
+
+    </div>
+{{else}}
+    <div class="ui  cards">
+          {{#each productos }}
+            <div class="ui card">
+              <div class="image">
+                <img src={{this.thumbnail}}>
+              </div>
+              <div class="content">
+                <a class="header">{{this.title}}</a>
+                <div class="meta">
+                  <a>{{this.price}}</a>
+                </div>
+              </div>
+            </div>
+          {{/each}}
+
+    </div>
+ {{/if}}
+
+
+
+
