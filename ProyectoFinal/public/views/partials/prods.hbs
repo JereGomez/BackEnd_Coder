@@ -1,0 +1,43 @@
+
+<body>
+  {{#if productos}}
+      {{> tarjetas}}
+     {{else}}
+      <h3 class="ui header"> No se encontraron productos </h3>    
+    {{/if}}
+  <br>
+  {{#if admin}}
+    <form class="ui center alinged form" action="/api/productos" method="POST">
+    <h2 class="ui header">Ingrese producto</h2>
+      <div class="fields">
+        <div class="three wide field">
+          <label>Nombre</label>
+          <input type="text" name="title" placeholder="Nombre" id="title">
+        </div>
+        <div class="three wide field">
+          <label>Precio</label>
+          <input type="number"  name="price" placeholder="Precio" id="price">
+        </div>
+        <div class="three wide field">
+          <label>Imagen</label>
+          <input type="text" name="thumbnail" placeholder="URL" id="thumbnail">
+        </div>
+        <div class="three wide field">
+          <label>Stock</label>
+          <input type="number" name="stock" placeholder="Stock" id="stock">
+        </div>
+      </div>
+      <div class="fields">
+        <div class="six wide field">
+          <label>Descripcion</label>
+          <textarea rows="1" name="descripcion" placeholder="Descripcion" id="descripcion"> </textarea>
+        </div>
+      </div>
+      <button rows="1" class="ui blue left labeled icon button" >
+        <i class="send icon"></i>
+        Enviar
+      </button>
+    </form>
+
+  {{/if}}
+</body>

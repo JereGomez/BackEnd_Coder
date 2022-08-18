@@ -1,0 +1,31 @@
+      <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+      integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+{{#if productos}}
+        <div class="ui  cards">
+          {{#each productos }}
+            <div class="card">
+                <div class="content">
+                        <img class="right floated mini ui image" src={{this.thumbnail}}>
+                    <a class="header">{{this.title}}</a>
+                    <div class="meta">
+                        <a>${{this.price}}</a>
+                    </div>
+                    <div class="description">{{this.descripcion}}</div>
+                </div>
+                <div class="extra content">
+                    <div class="ui two buttons">
+                        <button class="ui basic red button" onclick="sacarProd({{this.id}})">Eliminar</button>
+                    </div>
+              </div>
+            </div>
+          {{/each}}
+    {{else}}
+        <h3 class="ui header"> Carrito vacio</h3>
+{{/if}}
+    </div>

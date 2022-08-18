@@ -1,1 +1,44 @@
-[]
+[
+  {
+    "id": 1,
+    "timestamp": 1660834271899,
+    "productos": [
+      {
+        "title": "Mochila",
+        "price": "5250",
+        "thumbnail": "https://cdn3.iconfinder.com/data/icons/education-209/64/bag-pack-container-school-128.png",
+        "stock": "25",
+        "descripcion": " Mochila ideal para las clases, múltiples compartimentos y hasta bolsillo para laptop",
+        "id": 3,
+        "codigo": "3moc2625",
+        "timestamp": 1660831984904
+      },
+      {
+        "title": "lapiz",
+        "price": "150",
+        "thumbnail": "https://cdn3.iconfinder.com/data/icons/education-209/64/pencil-pen-stationery-school-128.png",
+        "stock": "10",
+        "descripcion": " Lapiz HB",
+        "id": 2,
+        "codigo": "2lap75",
+        "timestamp": 1660839295831
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "timestamp": 1660834288074,
+    "productos": [
+      {
+        "title": "Manzana",
+        "price": "150",
+        "thumbnail": "https://cdn3.iconfinder.com/data/icons/education-209/64/apple-fruit-science-school-128.png",
+        "stock": "50",
+        "descripcion": "Manzana verde ",
+        "id": 1,
+        "codigo": "1man75",
+        "timestamp": 1660862107868
+      }
+    ]
+  }
+]
