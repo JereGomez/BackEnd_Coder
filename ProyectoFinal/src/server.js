@@ -1,6 +1,4 @@
 import express from 'express';
-const {Router} = express //se importa la funcion router
-import Contenedor from "./utils/contenedor.js";//importo clase contenedor para el manejo de los productos
 import {apiProd} from "./routers/apiProd.js";
 import {apiCarr} from "./routers/apiCarr.js"
 const app = express();
