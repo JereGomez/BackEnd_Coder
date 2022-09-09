@@ -1,8 +1,12 @@
 import express from 'express';
 import {apiProd} from "./routers/apiProd.js";
 import {apiCarr} from "./routers/apiCarr.js"
+
+
 const app = express();
 const admin = true; //VARIABLE PARA DETERMINAR PERMISOS DE ADMINISTRADOR
+
+
 
 //HANDLEBARS
 import handlebars from "express-handlebars"
@@ -22,8 +26,8 @@ app.set("views", "./public/views");
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(express.static('public'));//utilizamos la carperta public para acceder al index
-app.use('/api/productos' , apiProd ); //localHost:3000/api/productos , a partir de esa direccion se usa el router apiProd
-app.use('/api/carrito' , apiCarr ); //localHost:3000/api/carrito , a partir de esa direccion se usa el router apiCarr
+app.use('/api/productos' , apiProd ); //localHost:8080/api/productos , a partir de esa direccion se usa el router apiProd
+app.use('/api/carrito' , apiCarr ); //localHost:8080/api/carrito , a partir de esa direccion se usa el router apiCarr
 
 
 
