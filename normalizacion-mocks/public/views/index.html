@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>webSocket</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible"content="IE=edge">
+    <meta name="viewport"content="width=device-width,initial-scale=1.0">
+      <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+      integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+</head>
+<body>
+ 
+  
+
+  <div id="chat">
+
+      <div class="ui container">
+        <div class="ui grid">
+          <div class="eight wide column">
+            <div class="card">
+              <div class="ui container">
+                <h1>Enviar mensaje</h1>
+                <div class="ui form">
+                  <div class="field">
+                    <label>E-mail: </label>
+                    <input type="email" name="nombre" id="email"/>
+                  </div>
+                  <div class="field">
+                    <label>Nombre: </label>
+                    <input type="email" name="nombre" id="nombre"/>
+                  </div>
+                  <div class="field">
+                    <label>Apellido: </label>
+                    <input type="email" name="apellido" id="apellido"/>
+                  </div>
+                  <div class="field">
+                    <label>edad: </label>
+                    <input type="email" name="edad" id="edad"/>
+                  </div>
+                  <div class="field">
+                    <label>Alias: </label>
+                    <input type="email" name="alias" id="alias"/>
+                  </div>
+                  <div class="field">
+                    <label>Mensaje: </label>
+                    <textarea name="mensaje" id="mensaje"></textarea>
+                  </div>
+                  <div class="field">
+                    <button class="ui primary button" onclick="enviarMensaje()">
+                      <i class="send icon"></i>
+                      Enviar
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+                <div class="eight wide column">
+            <div class="ui container">
+              <h1>Mensajes</h1>
+              <div id="mensajes"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/moment@2.29.4/moment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js" integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.socket.io/4.5.0/socket.io.min.js" integrity="sha384-7EyYLQZgWBi67fBtVxw60/OWl1kjsfrPFcaU0pp0nAh+i8FD068QogUvg85Ewy1k" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/normalizr@3.6.1/dist/normalizr.browser.min.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

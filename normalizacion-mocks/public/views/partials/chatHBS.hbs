@@ -1,0 +1,11 @@
+  {{#if mensajes}}
+          {{#each mensajes }}
+        <div class= "six wide post ui card" style="width:max-content">
+            <div class= "div ui container">
+            <b style="color:blue">{{this._doc.author.id}}</b> [<t style="color:brown">{{this._doc.author.alias}}</t>]: <i style="color:green">{{this._doc.text}}</i> <img src={{this._doc.author.avatar}} width: 50px height=50px></img>
+            </div>
+        </div>
+        {{/each}}
+  {{/if}}
+
+
