@@ -25,7 +25,6 @@ class ContenedorMongo{
     async save(mensaje){
         
         try{
-            mensaje.author.avatar = faker.internet.avatar();
             const nuevo =  await this.model.create(mensaje);
             return nuevo.author.id
          }
@@ -38,18 +37,10 @@ class ContenedorMongo{
 
         
 
-    async getAll(){ //devuelve un array de mensajes normalizado!!!
-        const author= new schema.Entity('authors');
-        const text = new schema.Entity('texts');
-        const message = new schema.Entity('messages',{
-            author: author,
-            text: text,
-       })
-       const messageArray = [message]
+    async getAll(){ //devuelve un array de mensajes normalizado!!
         try{
             const msgs = await this.model.find();
-            const  normalizedData = normalize(msgs, messageArray); //normalizacion
-            return normalizedData;
+            return msgs;
        
         }
         catch(err){

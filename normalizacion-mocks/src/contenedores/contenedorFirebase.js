@@ -26,12 +26,6 @@ class ContenedorFirebase{
     async save(mensaje){
         try{
             const doc = await this.collection.doc();
-            mensaje.author.avatar = faker.internet.avatar();
-            const text = mensaje.text
-            mensaje.text = {
-                texto : text,
-                id: faker.datatype.uuid() //agrego id para normalizar
-            }
             return await doc.create(mensaje);
 
 
@@ -54,15 +48,7 @@ class ContenedorFirebase{
             docs.map(doc=>{
                 lista.push({author:doc.data().author , text: doc.data().text});
             });
-            const author= new schema.Entity('authors');
-            const text = new schema.Entity('text')
-            const message = new schema.Entity('messages',{
-                author: author,
-                text: text
-            });
-            const messageArray = [message]
-            const  normalizedData = normalize(lista, messageArray); //normalizacion
-            return normalizedData;
+            return lista;
         }
         catch(err){
             throw(err)

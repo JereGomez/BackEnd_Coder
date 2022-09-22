@@ -8,6 +8,7 @@ import apiProd from './routers/apiProd.js'
 const httpServer = new http.Server(app); //modulo http toma los endpoint de la app
 const socketServer = new Server(httpServer); //socjet.io    comprate propiedades tomadas por http de la app a socketserver
 import {mensajesDao} from './daos/index.js'
+import {normalizadorMensajes} from './utils/normalizador.js'
 
 
 
@@ -38,11 +39,11 @@ app.get('/' , async (req,res)=>{
 
 socketServer.on('connection' , async (socket)=>{ //socket es el canal entre el cliente y el servidor
     console.log(`nuevo cliente conectado`)
-    //socket.emit('chat' ,  await mensajesDao.getAll())
+    socket.emit('chat' ,  await normalizadorMensajes(await mensajesDao.getAll()));
     socket.on('nuevo_msg' , async (mensaje)=>{
         await mensajesDao.save(mensaje);
-
-        socket.emit('chat' ,  await mensajesDao.getAll())
+        const mensajesNormalizados = await normalizadorMensajes(await mensajesDao.getAll())
+        socket.emit('chat' ,  mensajesNormalizados)
 
     });
 });

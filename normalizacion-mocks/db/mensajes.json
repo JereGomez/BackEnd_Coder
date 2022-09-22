@@ -1,283 +1,46 @@
 [
   {
     "author": {
-      "id": "prueba local",
-      "nombre": "asdasd",
-      "apellido": "sadasd",
-      "edad": "asdad",
-      "alias": "asdsad",
-      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/655.jpg"
+      "id": "dasdasdas",
+      "nombre": "dadasdasd",
+      "apellido": "asdasdasd",
+      "edad": "23",
+      "alias": "asdasdasd",
+      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1216.jpg"
     },
-    "text": "prueba local"
+    "text": "asdsadasd"
   },
   {
     "author": {
-      "id": "prueba local",
-      "nombre": "asdasd",
-      "apellido": "sadasd",
-      "edad": "asdad",
-      "alias": "asdsad",
-      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/471.jpg"
+      "id": "dasdasdas",
+      "nombre": "dadasdasd",
+      "apellido": "asdasdasd",
+      "edad": "23",
+      "alias": "asdasdasd",
+      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/666.jpg"
     },
-    "text": "prueba local"
+    "text": "asdsadasd"
   },
   {
     "author": {
-      "id": "prueba local norm",
-      "nombre": "zx",
-      "apellido": "ddsf",
-      "edad": "sdfdsf",
-      "alias": "fdsf",
-      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/337.jpg"
+      "id": "dasdasdas",
+      "nombre": "dadasdasd",
+      "apellido": "asdasdasd",
+      "edad": "23",
+      "alias": "asdasdasd",
+      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/171.jpg"
     },
-    "text": "prueba normaliazcion local"
+    "text": "asdsadasd"
   },
   {
     "author": {
-      "id": "prueba local norm",
-      "nombre": "zx",
-      "apellido": "ddsf",
-      "edad": "sdfdsf",
-      "alias": "fdsf",
-      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/590.jpg"
+      "id": "dasdasdas",
+      "nombre": "dadasdasd",
+      "apellido": "asdasdasd",
+      "edad": "23",
+      "alias": "asdasdasd",
+      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/782.jpg"
     },
-    "text": "prueba normaliazcion local"
-  },
-  {
-    "author": {
-      "id": "prueba local norm",
-      "nombre": "zx",
-      "apellido": "ddsf",
-      "edad": "sdfdsf",
-      "alias": "fdsf",
-      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/629.jpg"
-    },
-    "text": "prueba normaliazcion local"
-  },
-  {
-    "author": {
-      "id": "prueba local norm",
-      "nombre": "zx",
-      "apellido": "ddsf",
-      "edad": "sdfdsf",
-      "alias": "fdsf",
-      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1210.jpg"
-    },
-    "text": "prueba normaliazcion local"
-  },
-  {
-    "author": {
-      "id": "prueba local norm",
-      "nombre": "zx",
-      "apellido": "ddsf",
-      "edad": "sdfdsf",
-      "alias": "fdsf",
-      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/2.jpg"
-    },
-    "text": "prueba normaliazcion local"
-  },
-  {
-    "author": {
-      "id": "prueba local norm",
-      "nombre": "zx",
-      "apellido": "ddsf",
-      "edad": "sdfdsf",
-      "alias": "fdsf",
-      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/995.jpg"
-    },
-    "text": "prueba normaliazcion local"
-  },
-  {
-    "author": {
-      "id": "prueba local norm",
-      "nombre": "zx",
-      "apellido": "ddsf",
-      "edad": "sdfdsf",
-      "alias": "fdsf",
-      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/961.jpg"
-    },
-    "text": "prueba normaliazcion local"
-  },
-  {
-    "author": {
-      "id": "prueba local norm",
-      "nombre": "zx",
-      "apellido": "ddsf",
-      "edad": "sdfdsf",
-      "alias": "fdsf",
-      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1179.jpg"
-    },
-    "text": "prueba normaliazcion local"
-  },
-  {
-    "author": {
-      "id": "prueba local norm",
-      "nombre": "zx",
-      "apellido": "ddsf",
-      "edad": "sdfdsf",
-      "alias": "fdsf",
-      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1028.jpg"
-    },
-    "text": "prueba normaliazcion local"
-  },
-  {
-    "author": {
-      "id": "dfgdsfgdsfg",
-      "nombre": "zx",
-      "apellido": "ddsf",
-      "edad": "sdfdsf",
-      "alias": "fdsf",
-      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/238.jpg"
-    },
-    "text": "asdgfadsgdfg"
-  },
-  {
-    "author": {
-      "id": "dfgdsfgdsfg",
-      "nombre": "zx",
-      "apellido": "ddsf",
-      "edad": "sdfdsf",
-      "alias": "fdsf",
-      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/708.jpg"
-    },
-    "text": "asdgfadsgdfg"
-  },
-  {
-    "author": {
-      "id": "dfgdsfgdsfg",
-      "nombre": "zx",
-      "apellido": "ddsf",
-      "edad": "sdfdsf",
-      "alias": "fdsf",
-      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/847.jpg"
-    },
-    "text": "asdgfadsgdfg"
-  },
-  {
-    "author": {
-      "id": "dfgdsfgdsfg",
-      "nombre": "zx",
-      "apellido": "ddsf",
-      "edad": "sdfdsf",
-      "alias": "fdsf",
-      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/27.jpg"
-    },
-    "text": "asdgfadsgdfg"
-  },
-  {
-    "author": {
-      "id": "dfgdsfgdsfg",
-      "nombre": "zx",
-      "apellido": "ddsf",
-      "edad": "sdfdsf",
-      "alias": "fdsf",
-      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/670.jpg"
-    },
-    "text": "asdgfadsgdfg"
-  },
-  {
-    "author": {
-      "id": "jeremias",
-      "nombre": "zx",
-      "apellido": "ddsf",
-      "edad": "sdfdsf",
-      "alias": "fdsf",
-      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/69.jpg"
-    },
-    "text": "por decima vez"
-  },
-  {
-    "author": {
-      "id": "jeremias",
-      "nombre": "zx",
-      "apellido": "ddsf",
-      "edad": "sdfdsf",
-      "alias": "fdsf",
-      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/677.jpg"
-    },
-    "text": "por decima vez"
-  },
-  {
-    "author": {
-      "id": "jeremias",
-      "nombre": "zx",
-      "apellido": "ddsf",
-      "edad": "sdfdsf",
-      "alias": "fdsf",
-      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/940.jpg"
-    },
-    "text": "por decima vez"
-  },
-  {
-    "author": {
-      "id": "jeremias",
-      "nombre": "zx",
-      "apellido": "ddsf",
-      "edad": "sdfdsf",
-      "alias": "fdsf",
-      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/855.jpg"
-    },
-    "text": "por decima vez"
-  },
-  {
-    "author": {
-      "id": "jeremias",
-      "nombre": "zx",
-      "apellido": "ddsf",
-      "edad": "sdfdsf",
-      "alias": "fdsf",
-      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/374.jpg"
-    },
-    "text": "por decima vez"
-  },
-  {
-    "author": {
-      "id": "jeremias",
-      "nombre": "zx",
-      "apellido": "ddsf",
-      "edad": "sdfdsf",
-      "alias": "fdsf",
-      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/783.jpg"
-    },
-    "text": "por decima vez"
-  },
-  {
-    "author": {
-      "id": "jerjerjer",
-      "nombre": "dfgdfgdfg",
-      "apellido": "ertert",
-      "edad": "234234",
-      "alias": "sdfsdf",
-      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/949.jpg"
-    },
-    "text": "sdfsdfsdfdf"
-  },
-  {
-    "author": {
-      "id": "jerjerjer",
-      "nombre": "dfgdfgdfg",
-      "apellido": "ertert",
-      "edad": "234234",
-      "alias": "sdfsdf",
-      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1139.jpg"
-    },
-    "text": {
-      "texto": "sdfsdfsdfdf",
-      "id": "f46e1f63-348a-4cbf-ad3d-9386e007259d"
-    }
-  },
-  {
-    "author": {
-      "id": "jerjerjer",
-      "nombre": "dfgdfgdfg",
-      "apellido": "ertert",
-      "edad": "234234",
-      "alias": "sdfsdf",
-      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/185.jpg"
-    },
-    "text": {
-      "texto": "sdfsdfsdfdf",
-      "id": "cbc6cd49-fe08-46cb-add8-bb67b64ea2b1"
-    }
+    "text": "asdsadasd"
   }
 ]

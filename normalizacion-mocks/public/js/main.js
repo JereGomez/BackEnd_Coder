@@ -21,28 +21,28 @@ function productos(){
 };
 
 
-const author= new normalizr.schema.Entity('authors', {},{idAttribute: 'email'});
-const text = new normalizr.schema.Entity('texts', {});
-const message = new normalizr.schema.Entity('messages',{
-    author: author,
-    text: text,
-})
-const messageArray = [message]
+const schemaAuthor = new normalizr.schema.Entity('author');
+
+
+const schemaMensaje = new normalizr.schema.Entity('mensaje', { author: schemaAuthor }, { idAttribute: 'id' })
+
 
 
 socket.on('chat' , (mensajes)=>{
-    const msgDenormmalized = normalizr.denormalize(mensajes.result , messageArray, mensajes.entities);
+    const msgDenormmalized = normalizr.denormalize(mensajes.result , schemaMensaje, mensajes.entities);
     const url="http://localhost:8080/views/partials/chatHBS.hbs";
     fetch(url).then((resp)=>{ //hacemos fetch de la url para pasarla a texto y luego manejarla con handlebars
         return resp.text();
     }).then((text)=>{
         const template=Handlebars.compile(text);
-        const html = template({mensajes: msgDenormmalized});
+        const html = template({mensajes: msgDenormmalized.mensajes});
         const div = document.getElementById('mensajes');
         div.innerHTML = html;
     });
-
-
+    const pesoOrignial = JSON.stringify(msgDenormmalized).length;
+    const pesoCompr = JSON.stringify(mensajes).length;
+    const porcentHTML = document.getElementById('porcent');
+    porcentHTML.innerHTML = `<h2>Compresion ${((pesoOrignial - pesoCompr) / pesoOrignial * 100).toFixed(2)}</h2>`
 
 });
 

@@ -13,12 +13,6 @@ class ContenedorLocal{
         
         try{
             const contenido = JSON.parse(await fs.promises.readFile(`./db/${this.nombreArch}.json` , 'utf8')); //OBTENGO ELEMENTOS YA GUARDADOS
-            mensaje.author.avatar = faker.internet.avatar();
-            const text = mensaje.text
-            mensaje.text = {
-                texto : text,
-                id: faker.datatype.uuid() //agrego id para normalizar
-            }
             contenido.push(mensaje);//agregamos el producto con id al array del archivo
             await fs.promises.writeFile(`./db/${this.nombreArch}.json` , JSON.stringify(contenido, null , 2));
             console.log("guardado");
@@ -36,17 +30,9 @@ class ContenedorLocal{
 
 
     async getAll(){
-        const author= new schema.Entity('authors', {});
-        const text = new schema.Entity('texts');
-        const messages = new schema.Entity('messages',{
-            author: author,
-            mensaje: text
-       });
-       const messageArray = [messages]
         try{
             const contenido = JSON.parse(await fs.promises.readFile(`./db/${this.nombreArch}.json` , 'utf8')); //OBTENGO ELEMENTOS YA GUARDADOS
-            const  normalizedData = normalize(contenido, messageArray); //normalizacion
-            return normalizedData
+            return contenido
         }
         catch(err){
             throw(err);
@@ -57,7 +43,7 @@ class ContenedorLocal{
     async deleteAll(){
 
         try{
-            await fs.promises.writeFile(`./db/${this.nombreArch}.json` , '');
+            await fs.promises.writeFile(`./db/${this.nombreArch}.json` , '[]');
             console.log("Archivo vaciado");
         }
         catch (err){
