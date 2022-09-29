@@ -13,6 +13,7 @@ import config from './config.js'
 import session from 'express-session';
 import MongoStore from 'connect-mongo';
 const advancedOptions = {useNewUrlParser: true , useUnifiedTopology: true }
+import {checkSession} from './utils/middlewares.js'
 
 
 app.use(session({
@@ -49,13 +50,13 @@ app.set("view engine", "hbs");
 app.set("views", __dirname + "/public/views");
 
 
-app.get('/' , async (req,res)=>{
+app.get('/', checkSession, async (req,res)=>{
     if(!req.session.name){
         res.sendFile(__dirname + '/public/views/login.html')
     }
     else{
         res.sendFile(__dirname + '/public/views/index.html')
-    }
+    };
 
 
 
@@ -63,63 +64,38 @@ app.get('/' , async (req,res)=>{
 
 app.get('/name' , (req,res)=>{//para traer nombre de session desde front 
     res.json({name: req.session.name});
-})
+});
 
 
-app.get('/login' , (req,res)=>{ 
-    res.sendFile(__dirname + '/public/views/login.html');
-})
-
-app.get('/logoutName' , (req , res)=>{
-    req.session.destroy((err) =>{
-        if(err){
-            res.send({error: 'ocurrio un error al cerrar la sesion'})
-        }
-        else{
-            res.json({name: req.session.name});
-        }
-    })
-})
+app.get('/home', checkSession , (req,res)=>{ 
+    console.log(req.session.loginAt);
+    console.log(req.session.ultimaActualizacion);
+    res.sendFile(__dirname + '/public/views/index.html');
+});
 
 app.get('/logout' , (req , res)=>{
+    res.sendFile(__dirname + '/public/views/logout.html')
+});
+
+app.post('/api/logout' , (req , res)=>{
     req.session.destroy((err) =>{
         if(err){
             res.send({error: 'ocurrio un error al cerrar la sesion'})
         }
-        else{
-            res.sendFile(__dirname + '/public/views/logout.html');
-        }
-    })
-})
+    });
+});
 
 
 
-app.post('/login' , (req , res) =>{
+app.post('/api/login' , (req , res) =>{
     req.session.loginAt =  Date.now();//loginAt determina el momento en el que se crea la sesion, y ayuda a ver si hay sesiones activas
     if(!req.session.name){
         req.body.name?  req.session.name = req.body.name : ''
     }
-    res.redirect(__dirname + '/public/views/index.html');
+    res.send({status: 'ok'});
 });
 
- app.use((req, res, next) => {
-    if(req.session.name){//preguntamos si hay alguna session activa 
-        if((req.session.ultimaActualizacion - req.session.loginAt)> 600000 ){
-            req.session.destroy((err) =>{
-            if(err){
-                res.send({error: 'ocurrio un error al cerrar la sesion'})
-            }
-            else{
-                res.send({ok: 'session cerrada correctamente'});
-            }
-        })
-        }
-        else{
-        req.session.ultimaActualizacion =  Date.now();
-        }
-    }
-    next();
- });
+
 
 socketServer.on('connection' , async (socket)=>{ //socket es el canal entre el cliente y el servidor
     console.log(`nuevo cliente conectado`)

@@ -1,6 +1,5 @@
-const socket = io(); //funciones de soket del lado del cliente 
 nombre();
-logout();
+const socket = io(); //funciones de soket del lado del cliente 
 socket.on('connect' , ()=>{
 });
 
@@ -70,23 +69,6 @@ function enviarMensaje(){
 
 }
 
-async function login(){
-    try{
-        const name = document.getElementById('nombre').value;
-        await fetch(`/login` , {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({name:name})
-        })
-    }
-    catch(err){
-        console.log(err)
-    }
-    
-    
-}
 
 async function nombre(){
     try{
@@ -95,21 +77,12 @@ async function nombre(){
     })
     const objeto = await resultado.json()
     document.getElementById('bienvenido').innerHTML = `<h2 class="ui header">Bienvenido ${objeto.name}</h2>`;
+    console.log(objeto.name)
     }
     catch{
 
     }
 }
-
-async function logout(){
-    try{
-        const resultado = await fetch('/logoutName', {
-            method: 'GET'
-        })
-        const objeto = await resultado.json()
-        document.getElementById('adios').innerHTML = `<h2 class="ui header">Hasta luego ${objeto.name}</h2>`;
+function toLogout(){
+        window.location.href = '/logout'
         }
-        catch{
-    
-        }
-}
