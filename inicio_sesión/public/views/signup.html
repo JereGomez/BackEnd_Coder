@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <!-- Create a login using semantic ui -->
+  <div class="ui container">
+    <br>
+    <div class="ui middle aligned center aligned grid">
+      <div class="eight wide column">
+        <h2 class="ui teal image header">
+          <div class="content">
+            Registrarse
+          </div>
+        </h2>
+        <form class="ui large form" action="/api/signup" method="POST" >
+          <div class="ui stacked">
+            <div class="field">
+              <div class="ui left icon input">
+                <i class="user icon"></i>
+                <input type="text" name="username" placeholder="email" id="username">
+                <input type="text" name="password" placeholder="contraseña" id="password">
+              </div>
+            </div>
+            <button class="ui fluid large teal submit button" type="submit">Resgistrarse</button>
+            <br>
+          </div>  
+        </form>
+        <div class="ui fluid large teal submit button" onclick="toLogin()">Ir a Iniciar Sesión</div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="https://cdn.socket.io/4.5.0/socket.io.min.js" integrity="sha384-7EyYLQZgWBi67fBtVxw60/OWl1kjsfrPFcaU0pp0nAh+i8FD068QogUvg85Ewy1k" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/normalizr@3.6.1/dist/normalizr.browser.min.js"></script>
+  <script src="../js/signup.js"></script>
+</body>
+</html>
