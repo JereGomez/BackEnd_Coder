@@ -2,7 +2,7 @@
 function generador(cant){
 
     const random = (max, min) => {
-        return Math.floor(Math.random() * (max - min))
+        return Math.ciel(Math.random() * (max - min))
     }
     
     const createArrayRandom = (cantidad, maxNum, minNum) => {
