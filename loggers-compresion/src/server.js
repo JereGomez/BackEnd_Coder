@@ -99,4 +99,7 @@ else{
 
 
 
-app.on('error', (err)=>{console.log(`Ocurrio un error${err}`)});
+app.on('error', (err)=>{
+    console.log(`Ocurrio un error${err}`)
+    logger.log("error",`error en la aplicacion ${err}`);
+});
