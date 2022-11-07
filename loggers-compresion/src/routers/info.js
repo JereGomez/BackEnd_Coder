@@ -1,16 +1,33 @@
 import path from 'path';
-import process from 'process'
-const __dirname = path.resolve();
-import config from '../config.js'
+import process from 'process';
 import express from 'express';
 import os from 'os';
-const {Router} = express //se importa la funcion router
+import compression from 'compression';
+const gzipMiddleware = compression();
+import logger from '../utils/winston.js';
+const {Router} = express; //se importa la funcion router
 const apiInfo = Router();
 
 
 apiInfo.get('/' , (req,res)=>{
     const info = traerInfo();
-    res.send(traerInfo())
+    logger.log('info' , `Operacion existosa, Rresultado peticion: ${info}`);
+    res.send(info);
+});
+
+apiInfo.get('/debug' , (req,res)=>{
+    const info = traerInfo();
+    for (const i in info) {
+      console.log(i);
+    }
+    logger.log('info' , `Operacion existosa, Rresultado peticion: ${info}`);
+    res.send(info);
+});
+
+apiInfo.get('/copmressed', gzipMiddleware, (req,res)=>{
+    const info = traerInfo();
+    logger.log('info' , `Operacion existosa, Rresultado peticion: ${info}`);
+    res.send(info);
 });
 
 
@@ -26,7 +43,7 @@ function traerInfo(){
         directorioProyecto: { description: 'path del proyecto', value: process.cwd() },
         numeroCPUS: {descrition:'cantidad de CPUS en uso' , value: os.cpus().length}
     }
-}
+};
 
 
 export default apiInfo;

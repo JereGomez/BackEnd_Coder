@@ -14,3 +14,7 @@ siempre haciendo referencia al archivo server.js (dentro de la carpeta src) el c
         en pm2 podemos elegir el modo de ejecucion (CLUSTER / FORK) desde el mismo pm2
         o utilizando los parametros propios. 
         Desde pm2 seria con el comado "-i max" luego de "--watch"
+
+
+
+

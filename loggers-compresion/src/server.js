@@ -8,6 +8,7 @@ import apiRandoms from './routers/randoms.js'
 import main from './routers/main.js'
 
 import config from './config.js';
+import logger from './utils/winston.js'
 
 import session from 'express-session';
 import MongoStore from 'connect-mongo';
@@ -54,6 +55,12 @@ app.use('/info' , apiInfo);
 app.use('/api/randoms/' , apiRandoms);
 app.use('/' , main);
 
+
+// Ruta por defecto: Recurso no encontrado
+app.get("*", (req, res) => {
+    logger.log("warn",`Ruta no encontrada ${req.url}`)
+    res.status(400).send(`Ruta no encontrada ${req.url}`);
+});
 
 if(config.args.m === 'CLUSTER'){
     if (cluster.isPrimary) {

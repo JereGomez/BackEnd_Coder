@@ -11,7 +11,7 @@ const socketServer = new Server(httpServer); //socjet.io    comprate propiedades
 import {mensajesDao} from '../daos/index.js'
 import {normalizadorMensajes} from '../utils/normalizador.js'
 import config from '../config.js';
-
+import logger from '../utils/winston.js';
 
 import passport from 'passport';
 import LocalStrategy from 'passport-local';
@@ -59,6 +59,7 @@ import {checkSession, checkUser, comparePassword, hashPassword} from '../utils/m
 
 
 main.get('/', (req,res)=>{
+    logger.log('info' , `Operacion existosa, redireccion /home`);
     res.redirect('/home')
 
 });
@@ -66,36 +67,44 @@ main.get('/', (req,res)=>{
 main.get('/home', checkUser, checkSession, (req, res)=>{
         req.session.user = req.user;
         req.session.loginAt =  Date.now();//loginAt determina el momento en el que se crea la sesion, y ayuda a ver si hay sesiones activas
-    res.sendFile(__dirname + '/public/views/main.html');
+        logger.log('info' , `Operacion existosa, ruta: /home`);
+        res.sendFile(__dirname + '/public/views/main.html');
 });
 
 main.get('/name' , (req,res)=>{//para traer nombre de session desde front 
+    logger.log('info' , `Operacion existosa, resultado: ${req.session.name} [GET]`);
     res.json({name: req.session.name});
 });
 
 
 main.get('/logout' , (req , res)=>{
+    logger.log('info' , `Operacion existosa, ruta /logout [GET]`);
     res.sendFile(__dirname + '/public/views/login.html')
 });
 
 main.get('/login' , (req, res)=>{
+    logger.log('info' , `Operacion existosa, ruta /login [GET]`);
     res.sendFile(__dirname + '/public/views/login.html')
 })
 
 main.get('/signup' , (req, res)=>{
+    logger.log('info' , `Operacion existosa, ruta /signup [GET]`);
     res.sendFile(__dirname + '/public/views/signup.html')
 })
 
 main.post('/api/signup', passport.authenticate("signup", {
     failureRedirect: "/error"}), (req , res)=>{
-    res.redirect("/home");
+        logger.log('info' , `Operacion existosa, ruta /api/signup [POST]`);
+        res.redirect("/home");
 });
 
 main.post('/api/logout' , (req , res)=>{
     req.session.destroy((err) =>{
         if(err){
             res.send({error: 'ocurrio un error al cerrar la sesion'})
+            logger.log('error', 'Error al hacer logout, ruta /api/logout [POST]')
         }
+        logger.log('info' , `Operacion existosa, ruta /api/logout [POST]`);
     });
 });
 
@@ -104,13 +113,15 @@ main.post('/api/logout' , (req , res)=>{
 main.post('/api/login' , passport.authenticate("login", {
     failureRedirect: "/error",
   }), (req , res) =>{
+    logger.log('info' , `Operacion existosa, ruta /api/login [POST]`);
     res.redirect("/home");
 });
 
 
 
 socketServer.on('connection' , async (socket)=>{ //socket es el canal entre el cliente y el servidor
-    console.log(`nuevo cliente conectado`)
+    //console.log(`nuevo cliente conectado`)
+    logger.log('info' , `Nuevo Cliente conectado al socketServer`);
     socket.emit('chat' ,  await normalizadorMensajes(await mensajesDao.getAll()));
     socket.on('nuevo_msg' , async (mensaje)=>{
         await mensajesDao.save(mensaje);
