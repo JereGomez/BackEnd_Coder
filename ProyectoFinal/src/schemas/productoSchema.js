@@ -11,4 +11,4 @@ const ProductosSchema = new Schema({
 }, {timestamps: true});
 
 const productosSchema = model('productos' , ProductosSchema);
-export  {productosSchema}
+export default productosSchema

@@ -6,16 +6,6 @@ class ContenedorMongo{
         this.model = model
         this.uriString = uriString; 
     }
-    
-    async connect(){
-        try{
-            return await mongoose.connect(this.uriString);
-        }
-        catch(err){
-            throw new Error(`Error al conectar a la base de datos de MongoDB: ${err}`)
-        }
-    }
-
     async save(item){
         
         try{

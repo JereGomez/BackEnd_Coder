@@ -7,8 +7,8 @@ import {admin} from "../server.js"
 
 //GET
 apiProd.get ('/' , async (req,res)=>{
-    //res.render('main', { apiProd: true, admin: admin}); //handlebars
-    res.json(await ProductosDao.getAll()) //respuesta a modo de json para testear en postman 
+    res.render('main', { apiProd: true, admin: admin}); //handlebars
+    //res.json(await ProductosDao.getAll()) //respuesta a modo de json para testear en postman 
 });
 
 

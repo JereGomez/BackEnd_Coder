@@ -3,14 +3,8 @@ import ContenedorMongo from "../../contenedores/contenedorMongo.js";
 
 class CarritosDaoMongo extends ContenedorMongo{
 
-    constructor(model , uriString, productosDao){
-        super(model, uriString);
-        try{
-            this.connect();
-        }
-        catch(err){
-            throw new Error(`Error en la inicializacion del CarritoDao: ${err}`);
-        }
+    constructor(model, productosDao){
+        super(model);
         this.productosDao = productosDao; 
     }
 
@@ -46,8 +40,9 @@ class CarritosDaoMongo extends ContenedorMongo{
         return productos;
     }
 
-    async create(){
-        await this.model.create({productos: []});
+    async createCarr(){
+        const newCarr = await this.model.create({productos: []});
+        return newCarr._id;
     }
 
 

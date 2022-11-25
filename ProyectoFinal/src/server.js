@@ -1,11 +1,13 @@
 import express from 'express';
 import {apiProd} from "./routers/apiProd.js";
-import {apiCarr} from "./routers/apiCarr.js"
-
+import {apiCarr} from "./routers/apiCarr.js";
+import {apiUser} from './routers/apiUser.js';
+import connect from './utils/dbConnect.js';
+import config from './config.js';
 
 const app = express();
 const admin = true; //VARIABLE PARA DETERMINAR PERMISOS DE ADMINISTRADOR
-
+connect(app);
 
 
 //HANDLEBARS
@@ -22,12 +24,16 @@ app.set("view engine", "hbs");
 app.set("views", "./public/views");
 
 
+
+
 //Utilizar json en las request
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(express.static('public'));//utilizamos la carperta public para acceder al index
 app.use('/api/productos' , apiProd ); //localHost:8080/api/productos , a partir de esa direccion se usa el router apiProd
 app.use('/api/carrito' , apiCarr ); //localHost:8080/api/carrito , a partir de esa direccion se usa el router apiCarr
+app.use('/api/user' , apiUser);
+
 
 
 
