@@ -11,25 +11,9 @@ import LocalStrategy from "passport-local";
 import {Types} from 'mongoose';
 
 
-passport.use("login", new LocalStrategy(async(username, password, done)=>{
-  try{
-    console.log('hola')
-    const user = await UsuariosDao.getByUsername(username);
-    const passHash = user.password;
-    if (!user || !comparePassword(password, passHash)) {
-        return done(null, null, { message: "Invalid username or password" });
-    }
-    return done(null, user)
-}
-catch(err){
-    throw new Error(`Error al hacer login ${err}`)
-}
-}));
+passport.use("login", new LocalStrategy(login));
 
-passport.use("signup", new LocalStrategy({
-  passReqToCallback: true}, signup));
-
-
+passport.use("signup", new LocalStrategy({passReqToCallback: true}, signup));
 
 
 passport.serializeUser((user, done) => {
