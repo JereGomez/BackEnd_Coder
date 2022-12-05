@@ -30,7 +30,9 @@
     "yargs": "^17.6.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.20"
+    "i": "^0.3.7",
+    "nodemon": "^2.0.20",
+    "npm": "^8.19.2"
   },
   "description": ""
 }
