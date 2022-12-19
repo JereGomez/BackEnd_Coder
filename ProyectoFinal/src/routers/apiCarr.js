@@ -1,41 +1,19 @@
 //ROUTER PARA api/carrito
 import express from 'express';
 const {Router} = express //se importa la funcion router
-import {CarritosDao} from '../daos/index.js';
 const apiCarr = Router();
-import {admin} from "../server.js"
+import {carritoView , eliminarProd, actualizarCarrito, agrearAlCarrito, crearCarrito, eliminarCarritoCompleto, getAllProds} from '../controllers/carrito.js'
 
 //GET
-apiCarr.get ('/:id/productos' , async (req,res)=>{
-    const productos = await CarritosDao.getAllProds(req.params.id);
-    res.json(productos);
-    //res.render("main" , {apiProd: false,productos: productos});
-});
-
-
+apiCarr.get('/', carritoView )
+apiCarr.get ('/productos' , getAllProds); //traer productos de carrito especifico
 //POST
-apiCarr.post('/' , async(req,res)=>{//creamos carrito 
-    const id = await CarritosDao.create();
-    res.json({id})
-});
-
-apiCarr.post("/:id/productos/:id_prod" , async (req,res)=>{//agregamos producto a carrito 
-    await CarritosDao.addProd(req.params.id , req.params.id_prod) //pasamos id del carrito y id del producto
-
-});
-
+apiCarr.post('/' , crearCarrito);
+apiCarr.post("/productos/:id_prod" , agrearAlCarrito);
 //PUT
-apiCarr.put('/:id' , async(req,res)=>{});
-
+apiCarr.put('/:id' , actualizarCarrito);
 //DELETE
-apiCarr.delete('/:id' , async(req,res)=>{ //eliminar carrito completo 
-    await CarritosDao.deleteById(req.params.id)
-});
-
-apiCarr.delete("/:id/productos/:id_prod", async (req,res)=>{
-    await CarritosDao.deleteProd(req.params.id , req.params.id_prod); 
-});
-
-
+apiCarr.delete('/:id' , eliminarCarritoCompleto);
+apiCarr.delete("/productos/:id_prod", eliminarProd);
 
 export  {apiCarr}

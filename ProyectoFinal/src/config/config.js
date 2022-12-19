@@ -6,6 +6,10 @@ const config = {
     dbUser: process.env.DB_USER,
     dbPssword: process.env.DB_PASSWORD,
     uriString: process.env.DB_URI_STRING,
-    claveSecreta: process.env.SECRET_KEY
+    claveSecreta: process.env.SECRET_KEY,
+    myPhone: process.env.MY_PHONE,
+    twilioSID:process.env.TWILIO_SID,
+    twilioTOKEN: process.env.TWILIO_TOKEN,
+    twilioPHONE: process.env.TWILIO_PHONE
 }
 export default config

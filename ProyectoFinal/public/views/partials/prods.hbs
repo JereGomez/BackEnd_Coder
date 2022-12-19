@@ -1,10 +1,7 @@
 
 <body>
-  {{#if productos}}
-      {{> tarjetas}}
-     {{else}}
-      <h3 class="ui header"> No se encontraron productos </h3>    
-    {{/if}}
+ 
+
   <br>
   {{#if admin}}
     <form class="ui center alinged form" action="/api/productos" method="POST">

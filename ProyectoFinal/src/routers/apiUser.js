@@ -1,56 +1,40 @@
 import express from 'express';
 const {Router} = express //se importa la funcion router
 const apiUser = Router();
-import { signup, login } from '../controllers/usuarios.js';
-import {admin} from "../server.js"
+import {
+  signupView,
+  loginView,
+  signup,
+  login,
+  postLogin,
+  postSignup} from '../controllers/usuarios.js';
 
-import { UsuariosDao } from '../daos/index.js'; //falta crear
-import {autenticacion} from '../utils/middleware.js'
+import {DAOFactory} from '../modules/factory.ts'; 
+const UsuariosDAO = DAOFactory.getUsuariosDAO();
 import passport from 'passport';
-import LocalStrategy from "passport-local";
+import {Strategy as LocalStrategy} from "passport-local";
 import {Types} from 'mongoose';
 
-
+//passport config
 passport.use("login", new LocalStrategy(login));
-
-passport.use("signup", new LocalStrategy({passReqToCallback: true}, signup));
-
-
+passport.use("signup" ,new LocalStrategy({passReqToCallback: true}, signup));
 passport.serializeUser((user, done) => {
   done(null, user._id);
 });
   
 passport.deserializeUser(async (id, done) => {
   id = Types.ObjectId(id);
-  const user = await UsuariosDao.getById(id);
+  const user = await UsuariosDAO.getById(id);
   done(null, user);
 });
 
-apiUser.use(passport.initialize());
-apiUser.use(passport.session());
 
-
-apiUser.post('/signup', passport.authenticate("signup", { failureRedirect: '/api/user/signup'}),
-  (req,res)=>{
-    //req.session.user = req.user;
-    res.redirect('/api/user/login');
-  });
-
-apiUser.post("/login", passport.authenticate("login", {
-  failureRedirect: '/api/user/login'
-}),
-  (req,res)=>{
-      req.session.user = req.user;
-      res.send(`Bienvenido ${req.session.user}`);
-  });
-
-apiUser.get('/signup' , (req,res)=>{
-   res.render('registro')
-})
-
-apiUser.get('/login' , (req,res)=>{
-  res.render('login')
-})
+//POST
+apiUser.post('/signup', passport.authenticate("signup", { failureRedirect: '/api/user/signup'}), postSignup);
+apiUser.post("/login", passport.authenticate("login", {failureRedirect: '/api/user/login'}), postLogin);
+//GET
+apiUser.get('/signup' , signupView);
+apiUser.get('/login' , loginView);
 
 
 

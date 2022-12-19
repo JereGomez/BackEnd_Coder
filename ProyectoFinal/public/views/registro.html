@@ -18,12 +18,12 @@
     <h2 class="ui header">registro</h2>
       <div class="fields">
         <div class="three wide field">
-          <label>Nombre</label>
-          <input type="text" name="username" placeholder="Nombre" id="username">
+          <label>Email</label>
+          <input type="text" name="username" placeholder="Email" id="username">
         </div>
         <div class="three wide field">
-          <label>email</label>
-          <input type="text"  name="email" placeholder="email" id="email">
+          <label>Nombre</label>
+          <input type="text"  name="nombre" placeholder="Nombre" id="nombre">
         </div>
         <div class="three wide field">
           <label>password</label>
@@ -52,10 +52,16 @@
           <textarea rows="1" name="imagen" placeholder="imagen" id="imagen"> </textarea>
         </div>
       </div>
-      <button rows="1" class="ui blue left labeled icon button" >
+      <button rows="1" class="ui green left labeled icon button" >
         <i class="send icon"></i>
-        Enviar
+        Registrarse
       </button>
     </form>
+    <br>
+    <a href="/api/user/login"> 
+    <button rows="1" class="ui blue button">
+        Iniciar Sesión
+    </button>
+    </a>
 </body>
 </html>

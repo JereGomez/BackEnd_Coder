@@ -1,7 +1,7 @@
 import MongoStore from 'connect-mongo';
 import session from 'express-session';
 import mongoose from 'mongoose';
-import config from '../config.js'
+import config from '../config/config.js'
 
 async function connect(app){
     try{

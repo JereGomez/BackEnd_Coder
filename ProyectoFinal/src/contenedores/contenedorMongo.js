@@ -35,7 +35,6 @@ class ContenedorMongo{
     async getAll(){
         try{
             const items = await this.model.find();
-            console.log(this.model.collection.collectionName)
             return items;
         }
         catch(err){

@@ -12,15 +12,27 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body> 
-    {{#if apiProd}}
-        {{> prods}}
-    {{else}}
-        {{> carrito}}
-    {{/if}}
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js" integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <header>
+    <a href="/api/carrito/"> 
+      <button rows="1" class="ui blue button">
+          Carrito
+      </button>
+    </a>
+  </header>
+    <h1 id="bienvenido"></h1>
+  
+    <section id='cards' class="tarjetas"></section>
+    <a href="/logout"> 
+      <button rows="1" class="ui red button">
+          Cerrar Sesión
+      </button>
+    </a>
+    
+    
+  
     <script src="../js/main.js"> </script>
 </body>
 </html>

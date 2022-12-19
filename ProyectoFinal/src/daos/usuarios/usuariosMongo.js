@@ -1,5 +1,5 @@
 import ContenedorMongo from "../../contenedores/contenedorMongo.js";
-import { CarritosDao } from "../index.js";
+import { CarritosDao } from "../factory.js";
 //import { CarritosDao } from "../index.js";
 
 class UsuariosDaoMongo extends ContenedorMongo{
@@ -13,7 +13,7 @@ class UsuariosDaoMongo extends ContenedorMongo{
     async createUser(item){
         try{
             item.carrito = await CarritosDao.createCarr();
-            let user = await this.model.create(item);
+            const user = await this.model.create(item);
             return user;
         }
         catch(err){
@@ -22,8 +22,8 @@ class UsuariosDaoMongo extends ContenedorMongo{
     }
 
     async getCarId(user){
-        let userCarr = await this.model.findOne({'_id': user._id}).carrito;
-        return userCarr;
+        const carr = await this.model.findOne({'_id': user._id});
+        return carr.carrito;
     }
     
     async getByUsername(username){
@@ -34,7 +34,6 @@ class UsuariosDaoMongo extends ContenedorMongo{
             throw new Error(`Error al buscar  usuario por username ${err}`);
         }
     }
-
 
 }
 

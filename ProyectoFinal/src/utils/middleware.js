@@ -1,6 +1,6 @@
 function autenticacion  (req, res, next){
     if (!req.isAuthenticated()) {
-      res.redirect("/login");
+      res.redirect("/api/user/login");
     } else {
       next();
     }
